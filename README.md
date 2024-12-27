@@ -1,139 +1,50 @@
+# Welcome to your Expo app 👋
 
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-# **MyCargonaut Mobile App**
+## Get started
 
-This is the mobile application codebase for **MyCargonaut**, a ride-sharing and freight-sharing service that connects users for efficient and cost-effective transportation solutions. Built using **React Native**, this app is designed to deliver a seamless experience across Android and iOS devices.
+1. Install dependencies
 
----
-
-## **Table of Contents**
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Running Locally](#running-locally)
-- [Folder Structure](#folder-structure)
-- [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## **Features**
-- User authentication (Login/Register) with JWT.
-- Create and manage offers and requests on the go.
-- Real-time shipment tracking with map integration.
-- Search functionality with filters and sorting.
-- Push notifications for updates and messages.
-- User reviews and rating system.
-
----
-
-## **Tech Stack**
-- **Framework**: [React Native](https://reactnative.dev/)
-- **Navigation**: [React Navigation](https://reactnavigation.org/)
-- **State Management**: Context API / Redux (if applicable)
-- **Backend Communication**: REST and GraphQL
-- **Push Notifications**: Firebase or OneSignal (if applicable)
-
----
-
-## **Installation**
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/BatatiDE/mycargonaut-mobile.git
-   cd mycargonaut-mobile
-   ```
-
-2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Setup environment variables**:
-   Create a `.env` file in the root directory and add the necessary environment variables (see [Environment Variables](#environment-variables)).
+2. Start the app
 
-4. **Install native dependencies** (iOS only):
    ```bash
-   npx pod-install
+    npx expo start
    ```
 
----
+In the output, you'll find options to open the app in a
 
-## **Running Locally**
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-1. **Start the Metro bundler**:
-   ```bash
-   npm start
-   ```
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-2. **Run on Android**:
-   ```bash
-   npm run android
-   ```
+## Get a fresh project
 
-3. **Run on iOS**:
-   ```bash
-   npm run ios
-   ```
+When you're ready, run:
 
----
-
-## **Folder Structure**
-
-```plaintext
-.
-├── assets/              # Static assets (e.g., images, icons)
-├── src/
-│   ├── components/      # Reusable components
-│   ├── navigation/      # React Navigation configurations
-│   ├── screens/         # Screens for the app
-│   ├── utils/           # Helper functions and utilities
-│   ├── context/         # Context for managing global state
-│   ├── types/           # TypeScript type definitions
-├── .eslintrc.json       # ESLint configuration
-├── .prettierrc          # Prettier configuration
-├── package.json         # Dependencies and scripts
-└── README.md            # Project documentation
+```bash
+npm run reset-project
 ```
 
----
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## **Environment Variables**
-The app requires the following environment variables:
+## Learn more
 
-| Variable                | Description                                  |
-|-------------------------|----------------------------------------------|
-| `API_URL`               | Base URL for the backend API                |
-| `MAP_API_KEY`           | API key for map services (Google Maps, etc.)|
-| `FIREBASE_CONFIG`       | Firebase configuration for push notifications|
+To learn more about developing your project with Expo, look at the following resources:
 
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
+## Join the community
 
----
+Join our community of developers creating universal apps.
 
-## **Contributing**
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "feat: Add your feature"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. Open a Pull Request.
-
----
-
-## **License**
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
-
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
