@@ -1,39 +1,41 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import React from "react";
+import {NavigationContainer, NavigationIndependentTree} from "@react-navigation/native";
+import { AuthProvider } from "@/hooks/AuthContext";
+import Navbar from "@/hooks/Navbar";
+import { createStackNavigator } from "@react-navigation/stack";
+import LandingPage from "@/app/page";
+import Register from "@/app/register/page";
+import DashboardPage from "@/app/dashboard/page";
+import TripsPage from "@/app/trips/page";
+import TrackingPage from "@/app/tracking/page";
+import ProfilePage from "@/app/profile/page";
+import LoginPage from "@/app/login/page";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+const Stack = createStackNavigator();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+      <AuthProvider>
+        <NavigationIndependentTree>
+
+        <NavigationContainer>
+          <Navbar />
+          <Stack.Navigator initialRouteName="LandingPage">
+            <Stack.Screen
+                name="LandingPage"
+                component={LandingPage}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Dashboard" component={DashboardPage} />
+            <Stack.Screen name="Trips" component={TripsPage} />
+            <Stack.Screen name="Tracking" component={TrackingPage} />
+            <Stack.Screen name="Profile" component={ProfilePage} />
+            <Stack.Screen name="Login" component={LoginPage} />
+            <Stack.Screen name="Register" component={Register} />
+          </Stack.Navigator>
+        </NavigationContainer>
+        </NavigationIndependentTree>
+
+      </AuthProvider>
   );
 }
